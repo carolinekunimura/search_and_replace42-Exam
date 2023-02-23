@@ -39,7 +39,7 @@ size_t	ft_strlen(const char *str)
 /*
 Quando usamos a função ~main~ podemos receber parametros direto do terminal.
 Ao receber os parametro diretamente o terminal, é feita a leitura e organização dos argumentos da seguinte forma:
-w
+ARGC:
 ~argc~ recebe a quantidade parametros que foi escrita no terminal.
 No caso da função search_and_replace:
 
@@ -47,7 +47,8 @@ $./search_and_replace "Olá" "l" "b"
 
 Nesse caso foram passados 4 parametros, o nome do programa a ser executado e seus 3 argumentos --> argc == 4
 
-No paramentro argv, um ponteiro para um ponteiro que ir listar os argumentos sendo:
+ARGV:
+No paramentro argv, um ponteiro para um ponteiro vai listar os argumentos sendo:
 
 argv[0] --> search_and_replace
 argv[1] --> "Olá"
@@ -66,8 +67,8 @@ int	main(int argc, char **argv)
 		{
 			while(argv[1][i]) /* argv[1][0] == "O" */
 			{
-				if (argv[1][i] == argv[2][0]) /* Compara cada char da string com o char do argumento 2 */
-					write(1, &argv[3][0], 1); /* Se forem iguais, é feita a troca printando o argumento 3 aos inves do argv[1][i] */
+				if (argv[1][i] == argv[2][0]) /* Compara cada char da string com o char do argumento [2][0] */
+					write(1, &argv[3][0], 1); /* Se forem iguais, é feita a troca printando o argumento [3][0] aos inves do argv[1][i] */
 				else 
 					write(1, &argv[1][i], 1); /*se não forem iguais, imprime o valor na posição em que a string está */
 				i++;
